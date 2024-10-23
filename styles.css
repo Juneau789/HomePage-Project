@@ -231,8 +231,12 @@ body.dark-mode {
     color: #fff;
 }
 
-header.dark-mode, nav.dark-mode, footer.dark-mode {
+header.dark-mode, footer.dark-mode {
     background-color: #555;
+}
+
+nav.dark-mode{
+    background-color: #646464;
 }
 
 #courses.dark-mode, #projects.dark-mode, #skills.dark-mode, #about-me.dark-mode {
