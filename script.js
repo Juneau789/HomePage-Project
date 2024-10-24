@@ -1,10 +1,20 @@
 // Smooth Scroll for Navigation Links (Top and Footer)
 document.querySelectorAll('nav a, .footer-links a').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
+        const href = this.getAttribute('href');
+        // Check if the link is external (starts with "http")
+        if (href.startsWith("http")) {
+            // Allow external links to open normally
+            return;
+        }
+
+        // If it's an internal link, apply smooth scroll
         e.preventDefault();
-        const targetId = this.getAttribute('href').substring(1);
+        const targetId = href.substring(1);
         const targetElement = document.getElementById(targetId);
-        targetElement.scrollIntoView({ behavior: 'smooth' });
+        if (targetElement) {
+            targetElement.scrollIntoView({ behavior: 'smooth' });
+        }
     });
 });
 
